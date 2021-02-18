@@ -1,14 +1,14 @@
 CC=g++
-CFLAGS=-c -Wall
+CFLAGS=-Wall -Werror
 LDFLAGS=
-SOURCES=main.cpp hello.cpp factorial.cpp
-OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=hello
+SOURCES=geometry.c
+OBJECTS=$(SOURCES:.c=.o)
+EXECUTABLE=geometry
 
 all: $(SOURCES) $(EXECUTABLE)
 	
 $(EXECUTABLE): $(OBJECTS) 
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 
-.cpp.o:
+.c.o:
 	$(CC) $(CFLAGS) $< -o $@
