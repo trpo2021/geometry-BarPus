@@ -1,52 +1,87 @@
-#include <cstring>
 #include <iostream>
+#include <cstring>
 #include <regex>
 using namespace std;
 
-void Circle(string Figure)
+float CircleRadius(string Figure) 
 {
-    if ((strstr(Figure.c_str(), "circle "))
-        || (strstr(
-                Figure.c_str(),
-                "circle("))) { //проверяем правильности фигуры "окружность"
-
+	float R;
+	if((strstr(Figure.c_str(),"circle ")) || (strstr(Figure.c_str(),"circle("))) 
+	{   
         cmatch result;
-        regex regular(
-                "([\\w\\s]+)"
-                "(\\()"
-                "([\\s]*)"
-                "([0-9]+)"
-                "([\\s]*)" //проверяем входящую строку
-                "([0-9]+)"
-                "([\\s]*)"
-                "(\\,)"
-                "([\\s]*)"
-                "([0-9]*[.]?[0-9]+)"
-                "([\\s]*)"
-                "(\\))");
-
-        if (regex_match(Figure.c_str(), result, regular)) {
-            cout << "true" << endl;
-
-            //		for (int i=0; i<result.size(); i++) {
-            //			cout <<result[i++] <<endl;         -вывод каждого
-            //участка
-            //			}
-        }
-
-        // string R=result.str(10);
-        // cout <<R;
-
-        else
-            cout << "error" << endl;
-    } else
-        cout << "error" << endl;
+		regex regular ("([\\w\\s]+)"
+						"(\\()"  
+						"([\\s]*)"    
+						"([0-9]+)"
+						"([\\s]*)"                                                     
+						"([0-9]+)"
+						"([\\s]*)"  
+						"(\\,)"
+						"([\\s]*)"  
+						"([0-9]*[.]?[0-9]+)"
+						"([\\s]*)"  
+						"(\\))"  );  
+		if (regex_match(Figure.c_str(), result, regular)) 
+		{
+			R=stof(result.str(10));
+		}
+	}
+	return R;
 }
 
-int main()
+bool isGoodCircle(string Figure) 
 {
-    string Figure; //принимаем строку с фигурой
-    getline(cin, Figure);
-    Circle(Figure);
-    return 0;
+	if((strstr(Figure.c_str(),"circle ")) || (strstr(Figure.c_str(),"circle("))) 
+	{   
+        cmatch result;
+		regex regular ("([\\w\\s]+)"
+						"(\\()"  
+						"([\\s]*)"    
+						"([0-9]+)"
+						"([\\s]*)"                                                     
+						"([0-9]+)"
+						"([\\s]*)"  
+						"(\\,)"
+						"([\\s]*)"  
+						"([0-9]*[.]?[0-9]+)"
+						"([\\s]*)"  
+						"(\\))"  );  
+		if (regex_match(Figure.c_str(), result, regular)) 
+		{
+			return true;
+		}
+		else return false;
+	}
+	else return false;
 }
+
+
+float Perimeter(float R)
+{
+	float P, pi=3.14;
+	P=2*pi*R;
+	cout <<"Perimeter =" <<P <<endl;
+}
+
+float Area(float R)
+{
+	float S, pi=3.14;
+	S=pi*R*R;
+	cout <<"Area =" <<S <<endl;
+}
+		
+int main () {
+	float R;
+	string Figure;  
+	cout <<"Input Figure" <<endl;                                                             
+	getline(cin, Figure);
+	if (isGoodCircle(Figure)) 
+	{
+		R=CircleRadius(Figure);
+		Perimeter(R);
+		Area(R);
+	}
+	else cout<<"the Figure is set incorrectly";
+	return 0;
+}
+	
