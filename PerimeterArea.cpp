@@ -1,4 +1,5 @@
-#include <cstring>
+#include "PerimeterArea.h"
+#include <string>
 #include <iostream>
 #include <regex>
 using namespace std;
