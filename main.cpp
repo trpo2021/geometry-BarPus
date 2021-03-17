@@ -1,7 +1,7 @@
 #include "CircleRadius.h"
 #include "PerimeterArea.h"
 #include "isGoodCircle.h"
-#include <cstring>
+#include <string>
 #include <iostream>
 #include <regex>
 using namespace std;
