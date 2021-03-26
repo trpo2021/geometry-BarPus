@@ -5,4 +5,5 @@
 geometry
 *.out
 *.exe
+*.a
 
