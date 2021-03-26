@@ -8,9 +8,9 @@ LIBGEOMETRY_OBJ = obj/src/libgeometry/
 
 GEOMETRY_BIN = bin/
 
-$(GEOMETRY_BIN)geometry: $(GEOMETRY_OBJ)geometry.o $(LIBGEOMETRY_OBJ)libgeometry.a
+$(GEOMETRY_BIN)geometry: $(GEOMETRY_OBJ)main.o $(LIBGEOMETRY_OBJ)libgeometry.a
 	$(CC) $(CFLAGS) -o $@ $^
-$(GEOMETRY_OBJ)geometry.o: $(GEOMETRY_SRC)geometry.cpp 
+$(GEOMETRY_OBJ)main.o: $(GEOMETRY_SRC)main.cpp 
 	$(CC) -c $(CFLAGS) -o $@ $^
 $(LIBGEOMETRY_OBJ)libgeometry.a: $(LIBGEOMETRY_OBJ)CircleRadius.o $(LIBGEOMETRY_OBJ)isGoodCircle.o $(LIBGEOMETRY_OBJ)PerimeterArea.o
 	ar rcs $@ $^
