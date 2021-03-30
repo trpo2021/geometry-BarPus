@@ -1,6 +1,6 @@
-#include <geometry/CircleRadius.h>
-#include <geometry/isGoodCircle.h>
-#include <geometry/PerimeterArea.h>
+#include <libgeometry/CircleRadius.h>
+#include <libgeometry/isGoodCircle.h>
+#include <libgeometry/PerimeterArea.h>
 #include <iostream>
 #include <string>
 #include <regex>
