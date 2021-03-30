@@ -1,10 +1,10 @@
 CC=g++
-CFLAGS=-Wall -Wextra -Werror
+CFLAGS=-Wall -Wextra -Werror -I src/
 GEOMETRY_SRC = src/geometry/
 LIBGEOMETRY_SRC = src/libgeometry/
 
-GEOMETRY_OBJ = obj/src/geometry/ 
-LIBGEOMETRY_OBJ = obj/src/libgeometry/ 
+GEOMETRY_OBJ = obj/src/geometry/
+LIBGEOMETRY_OBJ = obj/src/libgeometry/
 
 GEOMETRY_BIN = bin/
 
