@@ -2,7 +2,7 @@
 *.swp
 *~
 *.o
-geometry
+main
 *.out
 *.exe
 *.a
