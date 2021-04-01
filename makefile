@@ -23,7 +23,7 @@ $(LIBGEOMETRY_OBJ)PerimeterArea.o: $(LIBGEOMETRY_SRC)PerimeterArea.cpp
 clean:
 	rm -rf $(GEOMETRY_OBJ)*.o
 	rm -rf $(LIBGEOMETRY_OBJ)*.o
-	rm -rf $(GEOMETRY_OBJ)*.a
+	rm -rf $(LIBGEOMETRY_OBJ)*.a
 	rm -rf $(GEOMETRY_BIN)geometry
 format:
 	git ls-files *.{cpp,h} | xargs clang-format -i
