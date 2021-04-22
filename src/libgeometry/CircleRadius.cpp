@@ -6,7 +6,7 @@ using namespace std;
 
 float CircleRadius(string Figure)
 {
-    float R;
+    float R=0;
     if ((strstr(Figure.c_str(), "circle "))
         || (strstr(Figure.c_str(), "circle("))) {
         cmatch result;
