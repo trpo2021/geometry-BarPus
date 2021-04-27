@@ -65,7 +65,7 @@ CTEST (CircleRadius, fractional_integer_center_and_spaces)
 CTEST (CircleRadius, spaces)
 {
 	//Given
-	const string Figure = "circle(  2  2,   3.4 )   ";
+	const string Figure = "circle(  2  2,   3.4 )";
 	
 	//When
 	const float R = CircleRadius(Figure);
