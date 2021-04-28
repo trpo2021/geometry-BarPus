@@ -1,4 +1,3 @@
 #pragma once
 #include <string>
-using namespace std;
-bool isGoodCircle(string Figure);
+bool isGoodCircle(std::string Figure);

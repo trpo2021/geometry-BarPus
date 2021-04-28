@@ -1,4 +1,3 @@
 #pragma once
 #include <string>
-using namespace std;
-float CircleRadius(string Figure);
+float CircleRadius(std::string Figure);
