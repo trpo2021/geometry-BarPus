@@ -3,6 +3,7 @@
 *~
 *.o
 main
+geometry
 *.out
 *.exe
 *.a
