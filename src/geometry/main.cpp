@@ -15,8 +15,11 @@ int main () {
 	if (isGoodCircle(Figure)) 
 	{
 		R=CircleRadius(Figure);
-		Perimeter(R);
-		Area(R);
+		float P = Perimeter(R);
+		cout << "Perimeter =" << P << endl;
+		float S = Area(R);
+		cout << "Area =" << S << endl;
+		
 	}
 	else cout<<"the Figure is set incorrectly";
 	return 0;
