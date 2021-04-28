@@ -48,13 +48,6 @@ $(TEST_OBJ)isGoodCircle.o: $(LIBGEOMETRY_SRC)isGoodCircle.cpp
 $(TEST_OBJ)PerimeterArea.o: $(LIBGEOMETRY_SRC)PerimeterArea.cpp
 	$(CXX) -c $(CFLAGS) -o $@ $^
 
-.PHONY: clean-test
-
-clean-test:
-	rm $(TEST_OBJ)*.o
-	rm $(TEST_OBJ)*.a
-	rm $(GEOMETRY_BIN)*.exe
-
 .PHONY: clean
 
 clean:
@@ -62,6 +55,9 @@ clean:
 	rm -rf $(LIBGEOMETRY_OBJ)*.o
 	rm -rf $(LIBGEOMETRY_OBJ)*.a
 	rm -rf $(GEOMETRY_BIN)*.exe
+	rm $(TEST_OBJ)*.o
+	rm $(TEST_OBJ)*.a
+	rm $(GEOMETRY_BIN)*.exe
 
 .PHONY: format
 
@@ -69,5 +65,3 @@ format:
 	git ls-files *.{cpp,h} | xargs clang-format -i
 	git add .
 	git commit -m "Format code"
-
--include ctest.d
