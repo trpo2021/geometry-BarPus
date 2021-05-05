@@ -4,6 +4,7 @@
 #include "libgeometry/CircleRadius.h"
 #include "libgeometry/isGoodCircle.h"
 #include "libgeometry/PerimeterArea.h"
+using namespace std;
 
 int main (int argc, const char** argv)
 {
